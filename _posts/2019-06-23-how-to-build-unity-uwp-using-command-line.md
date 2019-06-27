@@ -95,9 +95,11 @@ Changed process
 
 I executed `msbuild` multiple times to create .appx file for each platforms (x86, x64, ARM). Then I followed [this document](https://docs.microsoft.com/en-us/windows/uwp/packaging/packaging-uwp-apps#create-your-app-package-upload-file-manually) to create .appxupload file manually. Just copy *.appx and *.appxsym file into the directory, and zip all *.appx and *.appxsym file with result file name 'something.appxupload'. That was an easy stuff.
 
-Creating .appxbundle was a little bit harder than .appxupload. After searching internet more, I also found the way to bundle .appx files into .appxbundle file. First, copy all *.appx file into an empty directory. Second, create .appxbundle file using [makeappx.exe](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) executable.
+Creating .appxbundle was a little bit harder than .appxupload. After searching internet more, I also found the way to bundle .appx files into .appxbundle file. First, copy all *.appx file into an empty directory. Second, create .appxbundle file using [makeappx.exe](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-) executable. I executed a command in Git Bash:
 
-> MakeAppx.exe usage with Git Bash: `"/C/Program Files (x86)/Windows Kits/10/bin/x64/makeappx.exe" bundle -d "${PACKAGE_DIR}" -p result.appxbundle`
+```bash
+"/C/Program Files (x86)/Windows Kits/10/bin/x64/makeappx.exe" bundle -d "${PACKAGE_DIR}" -p result.appxbundle
+```
 
 `MakeAppx.exe` is bundled with Windows SDK. see [reference](https://docs.microsoft.com/en-us/windows/uwp/packaging/create-app-package-with-makeappx-tool#create-an-app-package) for detailed instruction.
 
@@ -105,8 +107,9 @@ Third, sign the .appxbundle with [signtool.exe](https://docs.microsoft.com/en-us
 
 > When using `SignTool` to sign your app package or bundle, the hash algorithm used in `SignTool` must be the same algorithm you used to package your app. For example, if you used `MakeAppx.exe` to create your app package with the default settings, you must specify SHA256 when using `SignTool` since that's the default algorithm used by `MakeAppx.exe`.
 
-With your certificate file `Your_StoreKey.pfx` specified in project's .appmanifest file for code signing, you may run command like:
-
-> SignTool.exe usage with Git Bash: `"/C/Program Files (x86)/Windows Kits/10/bin/x64/signtool.exe" sign -fd SHA256 -a -f "./Your_StoreKey.pfx" result.appxbundle`
+With your certificate file `Your_StoreKey.pfx` specified in project's .appmanifest file for code signing, you may run command in Git Bash like:
+```bash
+"/C/Program Files (x86)/Windows Kits/10/bin/x64/signtool.exe" sign -fd SHA256 -a -f "./Your_StoreKey.pfx" result.appxbundle
+```
 
 `SignTool.exe` is also bundled with Windows SDK. see [reference](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool) for detailed instruction.
