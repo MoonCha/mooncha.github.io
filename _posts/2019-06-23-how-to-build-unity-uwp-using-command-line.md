@@ -102,12 +102,11 @@ Creating .appxbundle was a little bit harder than .appxupload. After searching i
 `MakeAppx.exe` is bundled with Windows SDK. see [reference](https://docs.microsoft.com/en-us/windows/uwp/packaging/create-app-package-with-makeappx-tool#create-an-app-package) for detailed instruction.
 
 Third, sign the .appxbundle with [signtool.exe](https://docs.microsoft.com/en-us/dotnet/framework/tools/signtool-exe). You should use SHA256 for sign algorithm by this reason:
-```
-When using SignTool to sign your app package or bundle, the hash algorithm used in SignTool must be the same algorithm you used to package your app. For example, if you used MakeAppx.exe to create your app package with the default settings, you must specify SHA256 when using SignTool since that's the default algorithm used by MakeAppx.exe.
-```
+
+> When using `SignTool` to sign your app package or bundle, the hash algorithm used in `SignTool` must be the same algorithm you used to package your app. For example, if you used `MakeAppx.exe` to create your app package with the default settings, you must specify SHA256 when using `SignTool` since that's the default algorithm used by `MakeAppx.exe`.
+
+With your certificate file `Your_StoreKey.pfx` specified in project's .appmanifest file for code signing, you may run command like:
 
 > SignTool.exe usage with Git Bash: `"/C/Program Files (x86)/Windows Kits/10/bin/x64/signtool.exe" sign -fd SHA256 -a -f "./Your_StoreKey.pfx" result.appxbundle`
-
-`Your_StoreKey.pfx` is the certificate file specified for signing in project's .appxmanifest file.
 
 `SignTool.exe` is also bundled with Windows SDK. see [reference](https://docs.microsoft.com/en-us/windows/uwp/packaging/sign-app-package-using-signtool) for detailed instruction.
