@@ -66,7 +66,14 @@ Due to the behavior, we can add some native functions and 3rd-party packages lik
 
 ### Build failure by missing NuGet package
 
-However, my custom UWP project failed building project with error message that it cannot find winsdkfb package. I didn't think that NuGet dependency error because I turned "Package Restore" option on following [this document](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#migrating-to-automatic-restore). Anyway it happened, so I tried to research how to manually restore them. I used `msbuild.exe -t:restore`, but It had no effect. I found from the document above that msbuild's restore only works for packcages managed by PackageReference, but my project used `packages.config` for packcages management.
+However, my custom UWP project failed building project with error message that it cannot find winsdkfb package.
+
+```plain
+Error	C2653	'winsdkfb': is not a class or namespace name ${project_name}	c:\users\user\desktop\native_project\...
+Error	C2871	'winsdkfb': a namespace with this name does not exist	${project_name}	c:\users\user\desktop\native_project\...
+```
+
+I didn't think that NuGet dependency error because I turned "Package Restore" option on following [this document](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#migrating-to-automatic-restore). Anyway it happened, so I tried to research how to manually restore them. I used `msbuild.exe -t:restore`, but It had no effect. I found from the document above that msbuild's restore only works for packcages managed by PackageReference, but my project used `packages.config` for packcages management.
 
 > **MSBuild**: use the msbuild -t:restore command, which restores packages packages listed in the project file (PackageReference only). Available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017. `nuget restore` and `dotnet restore` both use this command for applicable projects.
 
