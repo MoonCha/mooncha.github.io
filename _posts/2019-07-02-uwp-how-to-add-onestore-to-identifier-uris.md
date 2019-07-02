@@ -2,12 +2,12 @@
 title: How to add onestore.microsoft.com to Azure AD app manifest identifierUris
 author: MoonCall
 layout: post
-categories: [NOTE_IT, NOTE_GAME]
+categories: [NOTE_IT, NOTE_DEV]
 ---
 
 I found many people having difficulty in following **[Manage product entitlements from a service](https://docs.microsoft.com/en-us/windows/uwp/monetize/view-and-grant-products-from-a-service)** document's Step 1. 5th instruction to implement uwp payments with `Windows.Services.Store` namespace, and I was also one of those suffering people.
 
-> 5. Add several required audience URIs to your *application manifest*. In the left pane, click **Manifest**. Click **Edit**, replace the "identifierUris" section with the following text, and then click **Save**.
+> Add several required audience URIs to your *application manifest*. In the left pane, click **Manifest**. Click **Edit**, replace the "identifierUris" section with the following text, and then click **Save**.
 >
 > ```JSON
 > "identifierUris" : [
@@ -19,9 +19,7 @@ I found many people having difficulty in following **[Manage product entitlement
 
 The problem is that every time I replace manifest's `identifierUris` with the value above, we get an error like:
 
-```plain
-Failed to update WindowsTestApp application. Error detail: The Application ID URI must be from a verified domain within your organisation's directory.
-```
+> Failed to update WindowsTestApp application. Error detail: The Application ID URI must be from a verified domain within your organisation's directory.
 
 The error instructs me to add `onestore.microsoft.com` to our verified domain, but adding `onestore.microsoft.com` is obviously impossible as I don't own the domain.
 
