@@ -17,6 +17,8 @@ I found many people having difficulty in following **[Manage product entitlement
 >    ],
 >```
 
+### Problem
+
 The problem is that every time I replace manifest's `identifierUris` with the value above, we get an error like:
 
 > Failed to update WindowsTestApp application. Error detail: The Application ID URI must be from a verified domain within your organisation's directory.
@@ -32,6 +34,8 @@ I found other people submitted the same issues like:
 I read replies in the links and searched more but I couldn't find any working solution.
 
 ~~Yes, I know the domain should be inside verified domain, but what's the point is that I cannot!! Stop saying to check domain.~~
+
+### Solution
 
 After wasting a lot of time, I found a working but strange solution.
 
@@ -56,3 +60,35 @@ As I had no way to put **https://onestore.microsoft.com/b2b/keys/create/collecti
 > AADSTS500011: The resource principal named https://onestore.microsoft.com/b2b/keys/create/collections was not found in the tenant named (...). This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You might have sent your authentication request to the wrong tenant.
 
 However, I could get access token for the audience URI after I use the solution above.
+
+---
+
+### Another Solution
+
+https://github.com/MicrosoftDocs/windows-uwp/issues/1717#issuecomment-507577676 suggests another way to solve this problem.
+
+> I have solve this problem:
+> Changing following fields to following value in your manifest.
+>
+> ```JSON
+> "accessTokenAcceptedVersion": 1,
+> "identifierUris": [
+>     "https://onestore.microsoft.com",
+>     "https://onestore.microsoft.com/b2b/keys/create/collections",
+>     "https://onestore.microsoft.com/b2b/keys/create/purchase"
+>     ],
+> "signInAudience": "AzureADMyOrg",
+> ```
+>
+> The "signInAudience" part can solve this problem, and the "accessTokenAcceptedVersion" part can solve the "getCustomerCollectionsIdAsync" return empty problem.
+> https://stackoverflow.com/a/56848128/1586797
+
+I've not tested the solution above, but there exists another important point to notice.
+
+After I solved `identifierUris` problem, I also met `"getCustomerCollectionsIdAsync" return empty` problem.
+
+I did not have no idea to solve, but changing `accessTokenAcceptedVersion` to 1 resolved the `return empty` problem. (previously `null`).
+
+Many people seems to suffer from the same problems, but why don't Microsoft update documents handling those stuffs?
+
+I thought Microsoft is one of the best companies that manage documents well, so it is quite disappointing...
