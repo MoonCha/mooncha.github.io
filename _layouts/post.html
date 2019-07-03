@@ -16,3 +16,19 @@ layout: default
 	  </div>
 	</article>
 </div>
+
+<!-- Render Mermaid -->
+<script type="text/javascript">
+	if (window.mermaid) {
+		var config = {
+			startOnLoad: true,
+			theme: 'neutral',
+			flowchart: {
+				useMaxWidth: false,
+				htmlLabels: true
+			}
+		};
+		mermaid.initialize(config);
+		mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+	}
+</script>
