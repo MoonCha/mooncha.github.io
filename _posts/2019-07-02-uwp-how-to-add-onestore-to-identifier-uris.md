@@ -9,7 +9,7 @@ I found many people having difficulty in following **[Manage product entitlement
 
 > Add several required audience URIs to your *application manifest*. In the left pane, click **Manifest**. Click **Edit**, replace the "identifierUris" section with the following text, and then click **Save**.
 >
-> ```JSON
+> ```json
 > "identifierUris" : [
 >        "https://onestore.microsoft.com",
 >        "https://onestore.microsoft.com/b2b/keys/create/collections",
@@ -70,7 +70,7 @@ https://github.com/MicrosoftDocs/windows-uwp/issues/1717#issuecomment-507577676 
 > I have solve this problem:
 > Changing following fields to following value in your manifest.
 >
-> ```JSON
+> ```json
 > "accessTokenAcceptedVersion": 1,
 > "identifierUris": [
 >     "https://onestore.microsoft.com",
