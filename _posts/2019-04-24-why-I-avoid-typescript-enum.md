@@ -132,5 +132,3 @@ const ITEM_TYPE = {
 let itemType: TValues<typeof ITEM_TYPE>;
 itemType = 4; // error!
 ```
-
-물론 가능하면 `const enum`을 쓰는게 훨씬 나아 보인다.
