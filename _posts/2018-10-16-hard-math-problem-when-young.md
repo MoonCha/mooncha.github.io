@@ -2,7 +2,7 @@
 title: 갑자기 생각난, 쉬워 보이지만, 내겐 너무 어려웠던 그런 수학 문제
 author: MoonCall
 layout: post
-categories: [NOTE_MISC, NOTE_MATH]
+categories: [MISC, MATH]
 ---
 
 > 주사위를 6이 한 번 나올때 까지 던지면 평균적으로 몇 번을 던져야 할까?

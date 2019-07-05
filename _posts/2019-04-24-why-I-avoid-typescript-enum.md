@@ -2,7 +2,7 @@
 title: 내가 Typescript의 Enum을 쓰지 않는 이유
 author: MoonCall
 layout: post
-categories: [NOTE_IT]
+categories: [JAVASCRIPT, TYPESCRIPT, PROGRAMMING]
 ---
 
 회사에서 기존 자바스크립트던 코드를 타입스크립트로 포팅한 이후로, 꾸준히 타입을 써가면서 타입 시스템의 혜택을 보기 위해 바꾸어 나가고 있다.

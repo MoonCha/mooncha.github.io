@@ -2,7 +2,7 @@
 title: 네임드 개발자 - 블로깅을 시작하며
 author: MoonCall
 layout: post
-categories: [NOTE_MISC]
+categories: [MISC]
 ---
 개발자들의 블로그는 상당히 흥미롭다.
 
@@ -23,4 +23,3 @@ categories: [NOTE_MISC]
 지금은 조금은 다르지 않을까.
 
 <span class="image right"><img src="{{ 'assets/images/wolves.jpg' | relative_url }}" alt="" /></span>
-

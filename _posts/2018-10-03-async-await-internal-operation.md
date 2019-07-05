@@ -2,7 +2,7 @@
 title: 어느 날 일하면서 알게된 Promise 내부 동작의 일부
 author: MoonCall
 layout: post
-categories: [NOTE_IT]
+categories: [JAVASCRIPT, PROGRAMMING]
 ---
 
 나는 보통 새 프로그래밍 언어를 입문할 때 튜토리얼 페이지를 보면서 기초부터 쌓아올리는 방식을 쓰지 않는다. 이미 작성된 코드나 예시 코드만 보고 대충 추측하고, 언어 syntax나 기능 사용에 문제가 부딪치면 그 때서야 찾아보는 편이다.

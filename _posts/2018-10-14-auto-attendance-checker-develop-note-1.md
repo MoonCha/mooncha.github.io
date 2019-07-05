@@ -2,7 +2,7 @@
 title: 웹 커뮤니티 자동 출석기 개발 일지 (1)
 author: MoonCall
 layout: post
-categories: [NOTE_IT, PROJECT_AUTO_ATTENDANCE_CHECKER]
+categories: [DEVELOPMENT, PROJECT]
 ---
 
 최근 남는 시간에 프로그래밍 연습도 하는 겸, 평소에 어느 정도 필요했던 것을 만들어 보기로 했다.

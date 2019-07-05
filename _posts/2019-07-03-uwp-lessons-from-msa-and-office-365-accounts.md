@@ -2,7 +2,7 @@
 title: Lessons from confusing between Microsoft Account(MSA) and Office 365 account
 author: MoonCall
 layout: post
-categories: [NOTE_IT, NOTE_GAME]
+categories: [UWP, MICROSOFT, DEVELOPMENT]
 ---
 
 ### Two Different Types of Microsoft Accounts

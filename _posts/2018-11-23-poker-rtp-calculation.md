@@ -2,7 +2,7 @@
 title: Video Poker RTP 계산기 구현에 대한 기록
 author: MoonCall
 layout: post
-categories: [NOTE_MISC, NOTE_MATH]
+categories: [MISC, MATH, VIDEO_POKER]
 ---
 
 회사에서 주어진 일 중 하나로 비디오 포커에 대한 Return To Player(이하 RTP)계산을 맡은적이 있다.
