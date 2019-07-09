@@ -3,6 +3,7 @@ title: How to add onestore.microsoft.com to Azure AD app manifest identifierUris
 author: MoonCall
 layout: post
 categories: [UWP, MICROSOFT, AZURE, DEVELOPMENT]
+lastmod: 2019-07-09
 ---
 
 I found many people having difficulty in following **[Manage product entitlements from a service](https://docs.microsoft.com/en-us/windows/uwp/monetize/view-and-grant-products-from-a-service)** document's Step 1. 5th instruction to implement uwp payments with `Windows.Services.Store` namespace, and I was also one of those suffering people.
@@ -60,6 +61,10 @@ As I had no way to put **https://onestore.microsoft.com/b2b/keys/create/collecti
 > AADSTS500011: The resource principal named https://onestore.microsoft.com/b2b/keys/create/collections was not found in the tenant named (...). This can happen if the application has not been installed by the administrator of the tenant or consented to by any user in the tenant. You might have sent your authentication request to the wrong tenant.
 
 However, I could get access token for the audience URI after I use the solution above.
+
+**Update 9 July 2019:**
+
+I found this soultion does not work anymore. I'll post later if I find another valid solution.
 
 ---
 
