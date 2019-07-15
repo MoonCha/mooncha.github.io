@@ -11,7 +11,7 @@ categories: [UNITY, C++]
 
 Unity에서는 C# 을 사용하는 반면, Plugin에서는 C++을 사용하므로 Plugin의 함수를 호출하거나 return value를 받을 때 C#에서 필연적으로 [Marshalling](https://en.wikipedia.org/wiki/Marshalling_(computer_science))을 하게 되는데, 주로 `string`(C#) <--> `wchar_t *`(C++) 사이의 Marshalling이 빈번하게 일어났다.
 
-그러던 중, 3336길이를 가지는(= `wchar_t`가 2byte이고, null이 포함되므로 총 1667글자) 글자를 C++ Plugin에서 반환하고, C# 코드에서 Marshalling된 string을 사용하려 했더니, Memory Access Violation 에러들이 났다. 그런데 매 번 동일한 패턴이 아니고 여러 군데에서 터지는 문제가 발생했다.
+그러던 중, 3336길이를 가지는(= `wchar_t`가 2byte이고, null이 포함되므로 총 1667글자) 문자열을 C++ Plugin에서 반환하고, C# 코드에서 Marshalling된 string을 사용하려 했더니, Memory Access Violation 에러들이 났다. 그런데 매 번 동일한 패턴이 아니고 여러 군데에서 터지는 문제가 발생했다.
 
 이상한 것이 기존에도 `wchar_t *` --> `string` 변환은 이미 작성한 다른 코드들에서 문제 없이 동작하고 있었는데, 이 곳에서 문제가 매 번 발생하는 것으로 보아 길이가 특정 길이 이상이면 메모리 관리가 이상해지는 것으로 추정했다.
 
