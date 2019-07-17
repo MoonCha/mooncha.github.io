@@ -112,6 +112,14 @@ extern "C" {
 ```c++
 #include <iostream>
 #include <Windows.h>
+
+const wchar_t* toUnityString(const wchar_t* srcData) {
+	ULONG  ulSize = (wcsnlen_s(srcData, 100000) * sizeof(wchar_t)) + sizeof(wchar_t);
+	wchar_t* pwszReturn = (wchar_t*)::CoTaskMemAlloc(ulSize);
+	// Copy the contents.
+	wcscpy_s(pwszReturn, ulSize, srcData);
+	return pwszReturn;
+}
 ​
 extern "C" {
 	const wchar_t* _stdcall getMarshalledString() {
@@ -134,9 +142,9 @@ extern "C" {
 - aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - OK
 - aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - NO
 
-위 결과 중 마지막 두 개에서 어떤 길이 이상의 문자열이 문제를 일으키는지 확인할 수 있다.
+위 결과 중 마지막 두 개에서 어떤 길이 이상의 문자열이 문제를 일으키는지 확인할 수 있다. 37글자의 a의 경우 OK 38글자의 a의 경우 Memory Violation이 발생했다.
 
-결론만 보면 37글자를 초과하는 경우 Memory Violation이 발생할 수 있는 것으로 보인다.
+따라서 이로 부터 추측해볼 때, 37글자를 초과하는 경우 Memory Violation이 발생하는 것으로 보인다.
 
 [string의 in-memory size에 관한 글](https://codeblog.jonskeet.uk/2011/04/05/of-memory-and-strings/)에 따르면 37글자의 `string`은 x64 환경에서 26 + length * 2 = 100 byte 인 것으로 보인다.
 
