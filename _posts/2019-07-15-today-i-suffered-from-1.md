@@ -3,6 +3,7 @@ title: Today I Suffered From (1) - Unity LPWStr(wchar_t*) marshalling causes mem
 author: MoonCall
 layout: post
 categories: [UNITY, C++]
+lastmod: 2019-07-17
 ---
 
 ### Today I Suffered From
@@ -11,7 +12,7 @@ categories: [UNITY, C++]
 
 Unity에서는 C# 을 사용하는 반면, Plugin에서는 C++을 사용하므로 Plugin의 함수를 호출하거나 return value를 받을 때 C#에서 필연적으로 [Marshalling](https://en.wikipedia.org/wiki/Marshalling_(computer_science))을 하게 되는데, 주로 `string`(C#) <--> `wchar_t *`(C++) 사이의 Marshalling이 빈번하게 일어났다.
 
-그러던 중, 3336길이를 가지는(= `wchar_t`가 2byte이고, null이 포함되므로 총 1667글자) 문자열을 C++ Plugin에서 반환하고, C# 코드에서 Marshalling된 string을 사용하려 했더니, Memory Access Violation 에러들이 났다. 그런데 매 번 동일한 패턴이 아니고 여러 군데에서 터지는 문제가 발생했다.
+그러던 중, 3336길이를 가지는(= `wchar_t`가 2byte이고, null이 포함되므로 총 1667글자) today-i-suffered-from-1을 C++ Plugin에서 반환하고, C# 코드에서 Marshalling된 string을 사용하려 했더니, Memory Access Violation 에러들이 났다. 그런데 매 번 동일한 패턴이 아니고 여러 군데에서 터지는 문제가 발생했다.
 
 이상한 것이 기존에도 `wchar_t *` --> `string` 변환은 이미 작성한 다른 코드들에서 문제 없이 동작하고 있었는데, 이 곳에서 문제가 매 번 발생하는 것으로 보아 길이가 특정 길이 이상이면 메모리 관리가 이상해지는 것으로 추정했다.
 
@@ -20,6 +21,10 @@ Unity에서는 C# 을 사용하는 반면, Plugin에서는 C++을 사용하므�
 그래도 일단은 `wchar_t *`를 return value로 주는 경우가 문제를 일으키는지 확인해보기 위해 이를 테스트 하기 위한 Minimal Unity Project를 만들었다.
 
 ### Unity Project 테스트
+
+**실험 환경:**
+- Unity 2018.3.8f1
+- x64
 
 먼저, 테스트를 위해 아래와 같이 빈 프로젝트를 만들고 Text UI하나를 놓았다.
 
@@ -95,3 +100,46 @@ extern "C" {
 정확한 원인은 모르겠지만 Marshaling된 string을 이용할 때 아무튼 메모리가 개판이 되는 것은 확실하다.
 
 이미 Windows Store 관련 개발로 너무 많은 시간을 끌어 버려서 일단은 되는 방법으로 조치해두고, 시간을 더 투자해서 해결법이나 원인을 제대로 찾지는 못해서 Today I Suffered From(TISF)로 제목을 지었다.
+
+---
+
+2019.07.17
+
+### 추가 실험
+
+위 실험을 진행하면서 정확히 어떤 크기의 Input이 Memory Violation을 일으키는지 테스트 해보지 않았다. 그래서 이를 알아내기 위해 아래와 같이 고정된 길이의 `wchar_t *` 값을 변경해가면서 실행한 후 시간이 지나도 Memory Violation을 일으키지 않는지 확인해 보았다.
+
+```c++
+#include <iostream>
+#include <Windows.h>
+​
+extern "C" {
+	const wchar_t* _stdcall getMarshalledString() {
+		return toUnityString(L"a");
+	}
+}
+```
+
+테스트 결과는 다음과 같다.
+
+- a - OK
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - NO
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - NO
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - NO
+- aaaaaaaaaaaaaaaaaaaaaaaaaa - OK
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - OK
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - NO
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - NO
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - NO
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - OK
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa - NO
+
+위 결과 중 마지막 두 개에서 어떤 길이 이상의 문자열이 문제를 일으키는지 확인할 수 있다.
+
+결론만 보면 37글자를 초과하는 경우 Memory Violation이 발생할 수 있는 것으로 보인다.
+
+[string의 in-memory size에 관한 글](https://codeblog.jonskeet.uk/2011/04/05/of-memory-and-strings/)에 따르면 37글자의 `string`은 x64 환경에서 26 + length * 2 = 100 byte 인 것으로 보인다.
+
+처음에는 문자열의 길이에 따라 C#에서 `string`이 어느 heap bin에 할당되는지에 따라 문제가 있지 않을까? 라고 의심을 했는데
+
+100은 대단히 수상한 숫자여서 Unity의 Marshalling 로직에 오류가 있지는 않은지 킹리적 갓심을 해본다.
