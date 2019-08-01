@@ -77,7 +77,7 @@ I didn't think that NuGet dependency error because I turned "Package Restore" op
 
 > **MSBuild**: use the msbuild -t:restore command, which restores packages packages listed in the project file (PackageReference only). Available only in NuGet 4.x+ and MSBuild 15.1+, which are included with Visual Studio 2017. `nuget restore` and `dotnet restore` both use this command for applicable projects.
 
-Unlike the description that `nuget restore` use msbuild restore, `nuget restore` just worked fine. Build successfuly finished after I execute ``nuget restore "${product_name}.sln"``.
+Unlike the description that `nuget restore` uses msbuild restore, `nuget restore` just worked fine. Build successfuly finished after I execute ``nuget restore "${product_name}.sln"``.
 
 **NOTE:** `nuget` is involved in Visual Studio, but not in .exe form, so you need to download it separately. see [this](https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools#cli-tools) to install.
 
@@ -112,7 +112,7 @@ Creating .appxbundle was a little bit harder than .appxupload. After searching i
 
 Third, sign the .appxbundle with [signtool.exe](https://docs.microsoft.com/en-us/dotnet/framework/tools/signtool-exe). You should use SHA256 for sign algorithm by this reason:
 
-> When using `SignTool` to sign your app package or bundle, the hash algorithm used in `SignTool` must be the same algorithm you used to package your app. For example, if you used `MakeAppx.exe` to create your app package with the default settings, you must specify SHA256 when using `SignTool` since that's the default algorithm used by `MakeAppx.exe`.
+> When using **SignTool** to sign your app package or bundle, the hash algorithm used in **SignTool** must be the same algorithm you used to package your app. For example, if you used **MakeAppx.exe** to create your app package with the default settings, you must specify SHA256 when using **SignTool** since that's the default algorithm used by **MakeAppx.exe**.
 
 With your certificate file `Your_StoreKey.pfx` specified in project's .appmanifest file for code signing, you may run command in Git Bash like:
 ```bash
