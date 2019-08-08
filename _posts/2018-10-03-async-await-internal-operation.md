@@ -1,5 +1,5 @@
 ---
-title: 어느 날 일하면서 알게된 Promise 내부 동작의 일부
+title: 어느 날 일하면서 알게된 Promise 동작의 일부
 author: MoonCall
 layout: post
 categories: [JAVASCRIPT, PROGRAMMING]
@@ -37,7 +37,7 @@ function getAllRowList() {
 그리고 이 함수들을 db라는 변수로 import했다고 가정하면, 이렇게 사용하고 있다.
 
 ```javascript
-const rowList = await db.getDebugSpinListByGameId(gameId);
+const rowList = await db.getRowListById(gameId);
 
 const allRowList = await db.getAllRowList();
 ```
