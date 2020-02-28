@@ -1,6 +1,6 @@
 ---
 title: Lessons from confusing between Microsoft Account(MSA) and Office 365 account
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [UWP, MICROSOFT, DEVELOPMENT]
 ---

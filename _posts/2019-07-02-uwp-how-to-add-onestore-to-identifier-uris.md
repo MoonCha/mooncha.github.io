@@ -1,6 +1,6 @@
 ---
 title: How to add onestore.microsoft.com to Azure AD app manifest identifierUris
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [UWP, MICROSOFT, AZURE, DEVELOPMENT]
 lastmod: 2019-07-19

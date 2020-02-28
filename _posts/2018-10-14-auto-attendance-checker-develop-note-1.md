@@ -1,6 +1,6 @@
 ---
 title: 웹 커뮤니티 자동 출석기 개발 일지 (1)
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [DEVELOPMENT, PROJECT]
 ---
@@ -47,4 +47,4 @@ Ubuntu 테스트는 개인 AWS EC2 인스턴스에서 진행했는데, 이상하
 * Dockerize
 * Web Log Viewer
 
-아직 설명도 제대로 안되어 있는 것에 관심있는 사람이 있을지는 모르겠지만, [Git repo Link](https://github.com/MoonCall/auto-attendance-checker)에서 볼 수 있다.
+아직 설명도 제대로 안되어 있는 것에 관심있는 사람이 있을지는 모르겠지만, [Git repo Link](https://github.com/MoonCha/auto-attendance-checker)에서 볼 수 있다.

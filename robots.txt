@@ -1,4 +1,7 @@
+---
+layout: null
+---
 User-agent: *
 Allow: /
 
-Sitemap: https://mooncall.github.io/sitemap.xml
+Sitemap: https://mooncha.github.io/sitemap.xml

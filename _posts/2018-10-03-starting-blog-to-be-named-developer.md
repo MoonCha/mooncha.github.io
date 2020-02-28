@@ -1,6 +1,6 @@
 ---
 title: 네임드 개발자 - 블로깅을 시작하며
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [MISC]
 ---

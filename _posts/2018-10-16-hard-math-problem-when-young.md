@@ -1,6 +1,6 @@
 ---
 title: 갑자기 생각난, 쉬워 보이지만, 내겐 너무 어려웠던 그런 수학 문제
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [MISC, MATH]
 ---

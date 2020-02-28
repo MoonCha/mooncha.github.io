@@ -1,6 +1,6 @@
 ---
 title: Memo] JS Promise resolve 결과로 Promise를 주는 경우 동작
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [JAVASCRIPT]
 ---

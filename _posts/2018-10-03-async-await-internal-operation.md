@@ -1,6 +1,6 @@
 ---
 title: 어느 날 일하면서 알게된 Promise 동작의 일부
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [JAVASCRIPT, PROGRAMMING]
 ---

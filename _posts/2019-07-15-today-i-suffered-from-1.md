@@ -1,6 +1,6 @@
 ---
 title: Today I Suffered From (1) - Unity LPWStr(wchar_t*) marshalling causes memory violation
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [UNITY, C++]
 lastmod: 2019-07-17

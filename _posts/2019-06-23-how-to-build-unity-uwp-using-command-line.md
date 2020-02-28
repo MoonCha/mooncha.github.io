@@ -1,6 +1,6 @@
 ---
 title: How to build Unity UWP project and bundle into .appxbundle or .appxupload
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [UWP, MICROSOFT, WINDOWS, DEVELOPMENT, CI/CD]
 ---

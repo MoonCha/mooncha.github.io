@@ -1,6 +1,6 @@
 ---
 title: 내가 Typescript의 Enum을 쓰지 않는 이유
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [JAVASCRIPT, TYPESCRIPT, PROGRAMMING]
 ---

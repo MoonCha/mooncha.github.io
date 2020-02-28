@@ -1,6 +1,6 @@
 ---
 title: Video Poker RTP 계산기 구현에 대한 기록
-author: MoonCall
+author: MoonCha
 layout: post
 categories: [MISC, MATH, VIDEO_POKER]
 ---
@@ -23,7 +23,7 @@ RTP는 유저가 한 게임에 1의 금액을 투입했을 때 얻을 수 있는
 
 구현 조건 중에는 `임의의 족보(ex: 4 Spade Aces)를 포함하여 계산 가능해야 함`도 있었기 때문에, [문양의 구분이 없는 족보만 존재하는 경우 컴퓨팅 타임을 약 95% 줄이는 방법](https://arxiv.org/pdf/1602.04171.pdf)은 적용하지 않았다. [Wizard of Odds - My Methodology for Video Poker Analysis](https://wizardofodds.com/games/video-poker/methodology/)에서도 `To cut down the running time to a few days you can avoid analyzing similar hands on the deal.  ... the number of different kinds of starting hands can be cut from 2,598,960 to 134,459.` 라고 소개하고 있다.
 
-결과물을 보고 싶은 사람이 있을지는 잘모르겠지만, 위 과정을 거쳐서 만든 Video Poker RTP Calculator는 [GitHub Repository](https://github.com/MoonCall/video-poker-calculator)에 올려두었다. 코드가 뒤죽박죽 섞여 어지러운 상태지만, 시간이 나면 정리해두려고 한다.
+결과물을 보고 싶은 사람이 있을지는 잘모르겠지만, 위 과정을 거쳐서 만든 Video Poker RTP Calculator는 [GitHub Repository](https://github.com/MoonCha/video-poker-calculator)에 올려두었다. 코드가 뒤죽박죽 섞여 어지러운 상태지만, 시간이 나면 정리해두려고 한다.
 
 ---
 
