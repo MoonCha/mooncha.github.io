@@ -54,7 +54,7 @@ If you modify `identifierUris` to the value above, you will see an error message
 
 **NOTE:** It was 2 July 2019, but I could use the `App registrations (Legacy)` tab to create or modify app registrations.
 
-I don't have no idea why I had to use the already deprecated legacy, but it successfully modified `identifierUris` to the values involving `https://onestore.microsoft.com/b2b/keys/create/collections` eventhough it showed `Request_BadRequest` error message.
+I have no idea why I had to use the already deprecated legacy, but it successfully modified `identifierUris` to the values involving `https://onestore.microsoft.com/b2b/keys/create/collections` eventhough it showed `Request_BadRequest` error message.
 
 As I had no way to put **https://onestore.microsoft.com/b2b/keys/create/collections** to `identifierUris`, I couldn't get Azure AD access token for **https://onestore.microsoft.com/b2b/keys/create/collections** audience URI. It just showed an error message like:
 
@@ -88,7 +88,7 @@ I've not tested the solution above, but there exists another important point to 
 
 After I solved `identifierUris` problem, I also met `"getCustomerCollectionsIdAsync" return empty` problem.
 
-I did not have no idea to solve, but changing `accessTokenAcceptedVersion` to 1 resolved the `return empty` problem. (previously `null`).
+I had no idea to solve the problem, but changing `accessTokenAcceptedVersion` to 1 resolved the `return empty` problem. (previously `null`).
 
 Many people seems to suffer from the same problems, but why don't Microsoft update documents handling those stuffs?
 
