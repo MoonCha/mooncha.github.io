@@ -29,7 +29,7 @@ SASD는 보안의 여러 분야 중 시스템 해킹을 중점적으로 다루�
 
 ## 문제 소개
 
-### [Environment/fast_math](https://github.com/MoonCha/sasd2019g11/tree/master/01_environment/fast_math)
+### [**Environment/fast_math**](https://github.com/MoonCha/sasd2019g11/tree/master/01_environment/fast_math)
 
 이 문제는 한 프로그램에서 계산을 위해 작성된 별도의 프로그램을 실행시키고, 그 프로그램의 실행 결과값을 받아온 후 보여주는 프로그램이다. 이 처럼 한 프로그램이 다른 프로그램을 실행시킬 때 `setuid`같은 것이 걸려 있다면 특히 주의할 필요가 있는데, 실행되는 별도의 프로그램 또한 같은 권한으로 실행되기 때문이다.
 
@@ -58,7 +58,7 @@ SASD는 보안의 여러 분야 중 시스템 해킹을 중점적으로 다루�
 
 [+] 보자마자 눈치챈 사람도 있겠지만, 굳이 TOCTOU를 이용하지 않아도 원하는 파일을 실행할 수 있다. 하지만 과제기 때문에 당신은 Intended Solution으로 풀어야 했을 것이다.
 
-### [integer/card_game](https://github.com/MoonCha/sasd2019g11/tree/master/03_integer/card_game)
+### [**integer/card_game**](https://github.com/MoonCha/sasd2019g11/tree/master/03_integer/card_game)
 
 다음 코드에서, `a == -a`가 참인 경우는 몇 가지일까?
 
@@ -71,7 +71,7 @@ if (a == -a) {
 }
 ```
 
-하지만, 위 조건을 만족하는 숫자는 **2**개이며 나머지 하나는 $$-(2)^(31)$$, `INT32_MIN`이다.
+하지만, 위 조건을 만족하는 숫자는 **2**개이며 나머지 하나는 $$-2^{31}$$, `INT32_MIN`이다.
 
 이처럼 사칙연산 외에도 `-`(negate)에서도 Overflow가 발생할 수 있다는 점을 명심하며, 숫자의 표현 범위가 정해져 있는 언어의 경우 항상 Overflow를 고려해서 로직을 짜야한다.
 
@@ -91,7 +91,7 @@ piles[2] = 12
 Pick a pile: 
 ```
 
-### [bonus/turing_completeness](https://github.com/MoonCha/sasd2019g11/tree/master/06_bonus/turing_completeness)
+### [**bonus/turing_completeness**](https://github.com/MoonCha/sasd2019g11/tree/master/06_bonus/turing_completeness)
 
 전형적인 리버싱 문제이다. 바이너리에서 요구하는 알맞은 인풋을 찾아서 입력하면 Flag가 나오게 되어있다.
 
@@ -99,7 +99,7 @@ Pick a pile:
 
 이 문제는 프로그램이 어떤 난독화 툴로 난독화 되었는지 알아내는 것에서 부터 시작한다. 난독화된 상태로 그대로 리버싱을 진행하는 방법도 있지만, 프로그램의 flow가 어떻게 이루어지는지 파악하기가 굉장히 어렵기 때문에 쉽지 않다. 기본적으로 난독화된 상태에서는 Flow Graph가 그려지지 않는다. 그와 동시에 동적 디버깅을 실행해보면 flow가 어떻게 이어지는지 매우 혼란스럽다. 물론 짱해커들은 어떻게든 잘 해내겠지만.
 
-![Obfuscated turing_completeness](/assets/images/obfuscated-turing_completeness.png){:height="500px"}
+![Obfuscated turing_completeness](/assets/images/obfuscated-turing_completeness.png){:height="750px"}
 
 
 아무튼, 이러한 난독화에 대응할 방법을 찾기 위해 구글리을 하다보면 `mov` instruction이 turing complete하다는 점을 이용하여 만들어진 [`movfuscator`](https://github.com/xoreaxeaxeax/movfuscator)로 난독화 되어 있음을 알게된다.
@@ -110,7 +110,7 @@ Pick a pile:
 
 `demovfuscator`를 이용하고 나면 아래와 같이 Flow Graph를 볼 수 있게 되며, 평소에 하던대로 로직 분석을 통해 알맞은 인풋을 찾아내면 된다.
 
-![Demovfuscated turing_completeness](/assets/images/demovfuscated-turing_completeness.png){:height="500px"}
+![Demovfuscated turing_completeness](/assets/images/demovfuscated-turing_completeness.png){:height="750px"}
 
 
 
