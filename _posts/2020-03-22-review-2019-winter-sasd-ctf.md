@@ -56,11 +56,11 @@ SASD는 보안의 여러 분야 중 시스템 해킹을 중점적으로 다루�
 
 이 경우, 처음에는 Symbolic Link로 파일 오너 체크를 통과한 후, *// Do Something* 부분이 실행되는 동안 `argv[1]`으로 전달된 파일을 자신의 파일로 바꿔치는 공격을 할 수 있다.
 
-[+] 보자마자 눈치챈 사람도 있겠지만, 굳이 TOCTOU를 이용하지 않아도 원하는 파일을 실행할 수 있다. 하지만 과제기 때문에 당신은 Intended Solution으로 풀어야 했을 것이다.
+[+] 보자마자 눈치챈 사람도 있겠지만, 굳이 TOCTOU를 이용하지 않아도 원하는 파일을 실행할 수 있다. 하지만 과제 문제이기 때문에 Intended Solution으로 풀었다.
 
 ### [**integer/card_game**](https://github.com/MoonCha/sasd2019g11/tree/master/03_integer/card_game)
 
-다음 코드에서, `a == -a`가 참인 경우는 몇 가지일까?
+다음 코드에서, `a == -a`가 참인 ???는 몇 가지일까?
 
 별 고민 없이 생각한다면 아마 1개라고 대답할지 모르겠다.
 
@@ -71,7 +71,7 @@ if (a == -a) {
 }
 ```
 
-하지만, 위 조건을 만족하는 숫자는 **2**개이며 나머지 하나는 $$-2^{31}$$, `INT32_MIN`이다.
+하지만, 위 조건을 만족하는 숫자는 **2**개이며 나머지 하나는 $$-2^{31}$$, `INT32_MIN`이다. (gcc 기준. 엄밀하게 말하면, signed integer overflow는 undefined behavior이다.)
 
 이처럼 사칙연산 외에도 `-`(negate)에서도 Overflow가 발생할 수 있다는 점을 명심하며, 숫자의 표현 범위가 정해져 있는 언어의 경우 항상 Overflow를 고려해서 로직을 짜야한다.
 
@@ -102,7 +102,7 @@ Pick a pile:
 ![Obfuscated turing_completeness](/assets/images/obfuscated-turing_completeness.png){:height="750px"}
 
 
-아무튼, 이러한 난독화에 대응할 방법을 찾기 위해 구글리을 하다보면 `mov` instruction이 turing complete하다는 점을 이용하여 만들어진 [`movfuscator`](https://github.com/xoreaxeaxeax/movfuscator)로 난독화 되어 있음을 알게된다.
+아무튼, 이러한 난독화에 대응할 방법을 찾기 위해 구글링을 하다보면 `mov` instruction이 turing complete하다는 점을 이용하여 만들어진 [`movfuscator`](https://github.com/xoreaxeaxeax/movfuscator)로 난독화 되어 있음을 알게된다.
 
 그리고 머지 않아 [`demovfuscator`](https://github.com/kirschju/demovfuscator)라는 툴이 있다는 것을 알게될 것이다.
 
