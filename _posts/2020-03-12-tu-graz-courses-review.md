@@ -5,7 +5,7 @@ layout: post
 categories: [MISC]
 ---
 
-![TU Graz Alte Campus](/assets/images/tu-graz-alte-campus.jpg){:height="500px"}
+![TU Graz Alte Campus](/assets/images/tu-graz-alte-campus.jpg){:width="55%"}
 
 ## TU Graz 과목들의 특징
 Graz University of Technology (TU Graz)의 보안랩은 [Meltdown](https://meltdownattack.com/) 취약점 발견 당시 해당 취약점을 리포트한 팀 중 하나였다. 그 이후로도 [ZombieLoad](https://zombieloadattack.com/)와 같은 Side Channel 취약점들을 보고해온 것으로 보인다. 이런 이유때문인지 TU Graz에서는 컴퓨터 보안과 관련된 과목이 세분화되어 다양하게 열렸고, 전체적으로 Side Channel 취약점을 집중적으로 연구하는 편이었던 것 같다.
@@ -34,8 +34,8 @@ TU Graz에 있는 동안 나는 아래 세 과목을 수강했다.
 
 **Note**: 수강생 중 Top 3 안에 들게 되면 트로피 느낌의 작은 기념품을 받는다.
 
-![SASD Awards Slides](/assets/images/tu-graz-sasd-awards.jpg){:height="350px"}
-![Iron Ducky](/assets/images/tu-graz-iron-ducky.jpg){:height="350px"}
+![SASD Awards Slides](/assets/images/tu-graz-sasd-awards.jpg){:width="48%"}
+![Iron Ducky](/assets/images/tu-graz-iron-ducky.jpg){:width="48%"}
 
 ### Applied Cryptography
 

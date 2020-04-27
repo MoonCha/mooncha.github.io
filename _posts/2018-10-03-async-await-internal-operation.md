@@ -57,14 +57,14 @@ orm처럼 `.execQuery()`가 마지막에 호출되면 모를까, 쿼리 빌드�
 `1.`의 방법은 query builder라고 칭할 수 없는 멍청한 동작이고, `2.`는 불안정하고 퍼포먼스도 구린, 차마 입에 담을수 없는 동작이다.
 그래서 이 의문은 잠시 미궁에 빠졌다. 하지만 곧 이들 함수는 Promise를 반환하는 것이 아니라는 것을 알게됐다.
 
-![Return type of getRowListById](/assets/images/getRowListByIdReturnType.png){:width="500px"}
+![Return type of getRowListById](/assets/images/getRowListByIdReturnType.png){:width="70%"}
 
 Knex.QueryBuilder라는 유사 Promise를 반환한다. 그러면 마지막으로 추정할 수 있는 것은 `await (something: Knex.QueryBuilder)`가 어떤 동작을 하냐는 것이다.
 await이 Knex.QueryBuilder의 `then` property를 호출한다고 하면 `then`이 `.execQuery()`와 같은 역할을 수행할 수 있다고 생각한다.
 
 아래는 knex documentation중 then에 대한 항목이다.
 
-![Knex Then Document](/assets/images/knexThenDocument.png){:width="500px"}
+![Knex Then Document](/assets/images/knexThenDocument.png){:width="70%"}
 
 빙고. `then`이 호출되면 그 때 쿼리 빌드를 끝내고 내부적으로 Promise와 동일하게 동작을 수행하는 듯 하다.
 

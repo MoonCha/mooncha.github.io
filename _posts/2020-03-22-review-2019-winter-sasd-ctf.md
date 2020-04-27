@@ -77,7 +77,7 @@ if (a == -a) {
 
 그러면 이 사실을 명심하며, 직소와의 카드 게임에서 이겨보면 된다.
 
-![Jigsaw](/assets/images/jigsaw-head.png){:height="300px"}
+![Jigsaw](/assets/images/jigsaw-head.png){:width="50%"}
 
 ```
 Let's play a game:
@@ -99,7 +99,7 @@ Pick a pile:
 
 이 문제는 프로그램이 어떤 난독화 툴로 난독화 되었는지 알아내는 것에서 부터 시작한다. 난독화된 상태로 그대로 리버싱을 진행하는 방법도 있지만, 프로그램의 flow가 어떻게 이루어지는지 파악하기가 굉장히 어렵기 때문에 쉽지 않다. 기본적으로 난독화된 상태에서는 Flow Graph가 그려지지 않는다. 그와 동시에 동적 디버깅을 실행해보면 flow가 어떻게 이어지는지 매우 혼란스럽다. 물론 짱해커들은 어떻게든 잘 해내겠지만.
 
-![Obfuscated turing_completeness](/assets/images/obfuscated-turing_completeness.png){:height="750px"}
+![Obfuscated turing_completeness](/assets/images/obfuscated-turing_completeness.png){:width="80%"}
 
 
 아무튼, 이러한 난독화에 대응할 방법을 찾기 위해 구글링을 하다보면 `mov` instruction이 turing complete하다는 점을 이용하여 만들어진 [`movfuscator`](https://github.com/xoreaxeaxeax/movfuscator)로 난독화 되어 있음을 알게된다.
@@ -110,7 +110,7 @@ Pick a pile:
 
 `demovfuscator`를 이용하고 나면 아래와 같이 Flow Graph를 볼 수 있게 되며, 평소에 하던대로 로직 분석을 통해 알맞은 인풋을 찾아내면 된다.
 
-![Demovfuscated turing_completeness](/assets/images/demovfuscated-turing_completeness.png){:height="750px"}
+![Demovfuscated turing_completeness](/assets/images/demovfuscated-turing_completeness.png){:width="80%"}
 
 
 
