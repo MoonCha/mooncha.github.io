@@ -1,4 +1,4 @@
----
+﻿---
 title: 단기 유학동안 수강한 보안 과목의 CTF 과제 문제 리뷰
 author: MoonCha
 layout: post
@@ -71,7 +71,7 @@ if (a == -a) {
 }
 ```
 
-하지만, 위 조건을 만족하는 숫자는 **2**개이며 나머지 하나는 $$-2^{31}$$, `INT32_MIN`이다. (gcc 기준. 엄밀하게 말하면, signed integer overflow는 undefined behavior이다.)
+하지만, 위 조건을 만족하는 숫자는 **2**개이며 나머지 하나는 $-2^{31}$, `INT32_MIN`이다. (gcc 기준. 엄밀하게 말하면, signed integer overflow는 undefined behavior이다.)
 
 이처럼 사칙연산 외에도 `-`(negate)에서도 Overflow가 발생할 수 있다는 점을 명심하며, 숫자의 표현 범위가 정해져 있는 언어의 경우 항상 Overflow를 고려해서 로직을 짜야한다.
 
@@ -111,6 +111,9 @@ Pick a pile:
 `demovfuscator`를 이용하고 나면 아래와 같이 Flow Graph를 볼 수 있게 되며, 평소에 하던대로 로직 분석을 통해 알맞은 인풋을 찾아내면 된다.
 
 ![Demovfuscated turing_completeness](/assets/images/demovfuscated-turing_completeness.png){:width="80%"}
+
+
+
 
 
 

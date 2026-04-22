@@ -1,4 +1,4 @@
----
+﻿---
 title: Video Poker RTP 계산기 구현에 대한 기록
 author: MoonCha
 layout: post
@@ -37,7 +37,7 @@ $$ \binom{m}{n} = \sum_{k=0}^{n} (-1)^k \binom{n}{k} \binom{m+n-k}{n-k} $$
 
 식이 나온 논리의 흐름은 다음과 같다.
 
-52장의 덱에서 5장을 뽑은 후 이 중 $$n$$장의 특정 카드를 다시 뽑은 카드와 교환하는 경우의 수는 $$\binom{47}{n}$$이다. 그리고 이는 교환하지 않는 $$5-n$$장을 제외하고 남은 $$52-(5-n) = 47+n$$장에서 $$n$$장을 다시 뽑을 때 나올 수 있는 경우에서 $$n$$장의 특정 카드가 한 장이라도 포함된 경우를 제외한 것과 동일하므로, 그 경우의 수도 동일하다. 이 경우 $$47+n$$장에서 $$n$$장을 다시 뽑는 경우 나올 수 있는 결과를 집합 $$S$$로 표현하고, 교환되는 카드($$x_{1}, x_{2}, ..., x_{n}$$)가 포함된 경우를 집합 $$X_{1}, X_{2}, ..., X_{n}$$으로 나타내면, $$S - (X_{1} \cup X_{2} \cup ... \cup X_{n})$$이 된다. 그리고 $$S \supset (X_{1} \cup X_{2} \cup ... \cup X_{n})$$ 이므로 $$\mid S - (X_{1} \cup X_{2} \cup ... \cup X_{n})\mid = \mid S \mid -\mid X_{1} \cup X_{2} \cup ... \cup X_{n}\mid$$ 그리고 [합집합의 cardinality를 교집합들의 cardinality를 이용하여 표현하고](https://math.stackexchange.com/questions/2038147/equation-for-cardinality-of-the-union-of-n-sets), 47을 m으로 바꾸면 대충 위와 같은 식이 나온다.
+52장의 덱에서 5장을 뽑은 후 이 중 $n$장의 특정 카드를 다시 뽑은 카드와 교환하는 경우의 수는 $\binom{47}{n}$이다. 그리고 이는 교환하지 않는 $5-n$장을 제외하고 남은 $52-(5-n) = 47+n$장에서 $n$장을 다시 뽑을 때 나올 수 있는 경우에서 $n$장의 특정 카드가 한 장이라도 포함된 경우를 제외한 것과 동일하므로, 그 경우의 수도 동일하다. 이 경우 $47+n$장에서 $n$장을 다시 뽑는 경우 나올 수 있는 결과를 집합 $S$로 표현하고, 교환되는 카드($x_{1}, x_{2}, ..., x_{n}$)가 포함된 경우를 집합 $X_{1}, X_{2}, ..., X_{n}$으로 나타내면, $S - (X_{1} \cup X_{2} \cup ... \cup X_{n})$이 된다. 그리고 $S \supset (X_{1} \cup X_{2} \cup ... \cup X_{n})$ 이므로 $\mid S - (X_{1} \cup X_{2} \cup ... \cup X_{n})\mid = \mid S \mid -\mid X_{1} \cup X_{2} \cup ... \cup X_{n}\mid$ 그리고 [합집합의 cardinality를 교집합들의 cardinality를 이용하여 표현하고](https://math.stackexchange.com/questions/2038147/equation-for-cardinality-of-the-union-of-n-sets), 47을 m으로 바꾸면 대충 위와 같은 식이 나온다.
 
 이것이 적용된 것은 아래 코드에 해당하는 부분이다.
 
@@ -63,3 +63,5 @@ $$ \binom{m}{n} = \sum_{k=0}^{n} (-1)^k \binom{n}{k} \binom{m+n-k}{n-k} $$
     return expectedOutcomeWithDiscard;
   }
 ```
+
+

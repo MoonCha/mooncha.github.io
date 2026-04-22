@@ -1,4 +1,4 @@
----
+﻿---
 title: 당신이 C integer에 대해 몰랐을 만한 것들
 author: MoonCha
 layout: post
@@ -27,11 +27,11 @@ representation of that particular size of integer. - [3.9.1/4](http://www.open-s
 unsigned integer type is reduced modulo the number that is one greater than the largest value that can be represented by the
 resulting unsigned integer type. - [3.9.1/4 - annotation](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3690.pdf)
 
-그러나 `unsigned int`의 경우 계산 후 $$\mod 2^{n}$$를 취하는 것이 standard로 정의되어 있어 일반적으로 기대하는 동작을 한다.
+그러나 `unsigned int`의 경우 계산 후 $\mod 2^{n}$를 취하는 것이 standard로 정의되어 있어 일반적으로 기대하는 동작을 한다.
 
 ### 일반적인 가정
 
-많은 경우 C 프로그램들은 int가 overflow하면 2의 보수하의 연산 후 $$\mod 2^{n}$$를 취하는 동작을 한다고 가정하고 작성되어 있다. [ref](https://www.gnu.org/software/autoconf/manual/autoconf-2.64/html_node/Integer-Overflow-Basics.html)
+많은 경우 C 프로그램들은 int가 overflow하면 2의 보수하의 연산 후 $\mod 2^{n}$를 취하는 동작을 한다고 가정하고 작성되어 있다. [ref](https://www.gnu.org/software/autoconf/manual/autoconf-2.64/html_node/Integer-Overflow-Basics.html)
 
 ## **2. Integer overflow by negation**
 
@@ -148,4 +148,7 @@ int main(int argc, char** argv) {
 -2
 18446744073709551614
 ```
+
+
+
 
