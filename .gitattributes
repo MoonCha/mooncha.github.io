@@ -1,0 +1,12 @@
+# Keep repository text files normalized to LF, including on Windows.
+* text=auto eol=lf
+
+# Binary assets should never be line-ending normalized.
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.zip binary
