@@ -1,3 +1,9 @@
 _site
 .sass-cache
 .jekyll-metadata
+
+# Obsidian local UI state and downloaded plugin bundles
+.obsidian/workspace.json
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/obsidian_askpass.sh
