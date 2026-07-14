@@ -23,9 +23,9 @@ author:
       url: https://github.com/MoonCha
 
 analytics:
-  provider: google-universal
+  provider: google-gtag
   google:
-    tracking_id: UA-126796569-1
+    tracking_id: G-5GMLL8Y7SN
 
 highlighter: rouge
 
