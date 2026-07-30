@@ -1,11 +1,15 @@
 ---
 title: 체크포인트 2024년 - 되돌아 보다
+description: "2024년의 삶과 개발자 커리어를 돌아보며 경험한 변화, 고민과 다음 해의 방향을 기록합니다."
 author: MoonCha
 layout: post
 categories: [MISC]
+header:
+  og_image: /assets/images/worrying-developer.webp
+  og_image_alt: 커리어를 고민하는 개발자 일러스트
 ---
 
-<img src="{{ 'assets/images/worrying-developer.webp' | relative_url }}" alt="" width="40%" />
+<img src="{{ 'assets/images/worrying-developer.webp' | relative_url }}" alt="커리어를 고민하는 개발자 일러스트" width="40%" />
 
 ## 지나오다
 2024년이 되며 한국식 나이로 30이 되고, 이제는 멀지 않은 미래에 만 나이도 30이 되면서 통계상으로도 30대가 된다.

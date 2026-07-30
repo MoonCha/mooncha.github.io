@@ -1,9 +1,14 @@
 ---
-title: Today I Suffered From (1) - Unity LPWStr(wchar_t*) marshalling causes memory violation
+title: Fix Unity LPWStr memory violations
+description: "A debugging case study of a Unity UWP memory violation caused by marshaling a native wchar_t pointer as LPWStr."
+locale: en-US
 author: MoonCha
 layout: post
 categories: [UNITY, C++]
-lastmod: 2019-07-17
+last_modified_at: 2019-07-17
+header:
+  og_image: /assets/images/memory-violation-after-marshalled-string-return-1.png
+  og_image_alt: Visual Studio debugger showing a memory violation after string marshalling
 ---
 
 ### Today I Suffered From

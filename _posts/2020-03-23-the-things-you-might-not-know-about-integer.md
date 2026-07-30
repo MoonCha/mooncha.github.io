@@ -1,5 +1,6 @@
 ﻿---
 title: 당신이 C integer에 대해 몰랐을 만한 것들
+description: "C 언어 정수 타입의 범위, 오버플로, 승격과 변환 과정에서 놓치기 쉬운 동작을 예제와 함께 설명합니다."
 author: MoonCha
 layout: post
 categories: [DEVELOPMENT]

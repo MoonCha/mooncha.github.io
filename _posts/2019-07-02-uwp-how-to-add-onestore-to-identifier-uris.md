@@ -1,9 +1,14 @@
 ---
-title: How to add onestore.microsoft.com to Azure AD app manifest identifierUris
+title: Azure AD identifierUris for onestore.com
+description: "How to add onestore.microsoft.com to an Azure AD app manifest's identifierUris when implementing Windows.Services.Store server-side entitlements."
+locale: en-US
 author: MoonCha
 layout: post
 categories: [UWP, MICROSOFT, AZURE, DEVELOPMENT]
-lastmod: 2019-07-19
+last_modified_at: 2019-07-19
+header:
+  og_image: /assets/images/app-registrations-tab.png
+  og_image_alt: Azure AD App registrations legacy tab
 ---
 
 I found many people having difficulty in following **[Manage product entitlements from a service](https://docs.microsoft.com/en-us/windows/uwp/monetize/view-and-grant-products-from-a-service)** document's Step 1. 5th instruction to implement uwp payments with `Windows.Services.Store` namespace, and I was also one of those suffering people.

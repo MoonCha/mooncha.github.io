@@ -1,5 +1,6 @@
 ---
 title: 웹 커뮤니티 자동 출석기 개발 일지 (1)
+description: "웹 커뮤니티 자동 출석기를 만들며 구조를 설계하고 JavaScript 자동화 기능을 구현한 과정을 기록합니다."
 author: MoonCha
 layout: post
 categories: [DEVELOPMENT, PROJECT]

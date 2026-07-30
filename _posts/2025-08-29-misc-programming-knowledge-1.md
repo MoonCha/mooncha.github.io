@@ -1,5 +1,6 @@
 ---
 title: 프로그래밍 토막 지식 (1)
+description: "실무 프로그래밍에서 마주친 작지만 유용한 동작, 도구와 디버깅 지식을 짧은 예제로 정리합니다."
 author: MoonCha
 layout: post
 categories: [MISC]

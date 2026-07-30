@@ -1,5 +1,7 @@
 ---
-title: How to build Unity UWP project and bundle into .appxbundle or .appxupload
+title: Build Unity UWP from the command line
+description: "A practical command-line workflow for building a Unity UWP project and packaging it as an .appxbundle or .appxupload with MSBuild."
+locale: en-US
 author: MoonCha
 layout: post
 categories: [UWP, MICROSOFT, WINDOWS, DEVELOPMENT, CI/CD]

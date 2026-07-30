@@ -1,8 +1,13 @@
 ---
-title: Lessons from confusing between Microsoft Account(MSA) and Office 365 account
+title: Microsoft vs. Office 365 accounts
+description: "Explains the differences between Microsoft Accounts and Office 365 accounts, including Azure AD and Partner Center issues caused by confusing them."
+locale: en-US
 author: MoonCha
 layout: post
 categories: [UWP, MICROSOFT, DEVELOPMENT]
+header:
+  og_image: /assets/images/microsoft-login-with-different-account-types.png
+  og_image_alt: Microsoft sign-in page showing personal and organizational accounts
 ---
 
 ### Two Different Types of Microsoft Accounts

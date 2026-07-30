@@ -1,11 +1,15 @@
 ---
-title: 일하면서 일찍 했으면 좋았을 점 (1) - Cheat Sheet 만들기
+title: 업무 Cheat Sheet를 일찍 만들었어야 했던 이유
+description: "반복 업무의 실수를 줄이고 속도를 높이기 위해 개인 업무 Cheat Sheet를 만들고 관리하는 방법을 정리합니다."
 author: MoonCha
 layout: post
 categories: [MISC]
+header:
+  og_image: /assets/images/working-man-with-tools.png
+  og_image_alt: 여러 도구를 들고 일하는 개발자 일러스트
 ---
 
-<img src="{{ 'assets/images/working-man-with-tools.png' | relative_url }}" alt="" width="40%" />
+<img src="{{ 'assets/images/working-man-with-tools.png' | relative_url }}" alt="여러 도구를 들고 일하는 개발자 일러스트" width="40%" />
 
 어느덧 일한 지도 만 7년이 다 되어 간다. 이쯤 되니 종종 ‘그때 이걸 더 일찍 했더라면 어땠을까’ 하는 생각이 들곤 한다. 최근 들어 특히 많이 느끼는 것은 **업무 Cheat Sheet의 중요성**이다.
 

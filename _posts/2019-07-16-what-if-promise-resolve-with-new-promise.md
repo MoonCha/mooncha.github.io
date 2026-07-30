@@ -1,5 +1,6 @@
 ---
-title: Memo] JS Promise resolve 결과로 Promise를 주는 경우 동작
+title: Promise resolve에 다른 Promise를 전달할 때
+description: "JavaScript Promise의 resolve 값으로 다른 Promise를 전달할 때 기존 Promise가 어떻게 동작하는지 간단한 예제로 설명합니다."
 author: MoonCha
 layout: post
 categories: [JAVASCRIPT]

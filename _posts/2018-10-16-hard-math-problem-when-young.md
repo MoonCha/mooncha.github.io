@@ -1,5 +1,6 @@
 ﻿---
-title: 갑자기 생각난, 쉬워 보이지만, 내겐 너무 어려웠던 그런 수학 문제
+title: 주사위 기댓값으로 풀어본 어려웠던 확률 문제
+description: "주사위에서 6이 나올 때까지 던지는 횟수의 기댓값을 통해 확률과 무한급수 문제를 풀이합니다."
 author: MoonCha
 layout: post
 categories: [MISC, MATH]

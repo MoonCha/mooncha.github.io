@@ -1,8 +1,12 @@
 ---
 title: TU Graz에서 수강한 과목에 대한 리뷰
+description: "TU Graz 단기 유학 중 수강한 컴퓨터공학 과목의 구성, 난이도, 과제와 시험 경험을 리뷰합니다."
 author: MoonCha
 layout: post
 categories: [MISC]
+header:
+  og_image: /assets/images/tu-graz-alte-campus.jpg
+  og_image_alt: 오스트리아 TU Graz Alte Technik 캠퍼스
 ---
 
 ![TU Graz Alte Campus](/assets/images/tu-graz-alte-campus.jpg){:width="55%"}

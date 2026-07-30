@@ -1,3 +1,53 @@
+{% if page.robots %}
+<meta name="robots" content="{{ page.robots }}">
+{% endif %}
+
+{% unless site.twitter.username %}
+{% assign social_description = page.description | default: page.excerpt | default: site.description | markdownify | strip_html | strip_newlines | strip %}
+{% assign social_image = page.header.og_image | default: page.header.overlay_image | default: page.header.image | default: site.og_image %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
+<meta name="twitter:description" content="{{ social_description | escape }}">
+{% if social_image %}
+<meta name="twitter:image" content="{{ social_image | absolute_url }}">
+<meta name="twitter:image:alt" content="{{ page.header.og_image_alt | default: site.og_image_alt | escape }}">
+{% endif %}
+{% endunless %}
+
+{% if page.collection == "posts" %}
+{% assign article_description = page.description | default: page.excerpt | markdownify | strip_html | strip_newlines | strip %}
+{% assign article_modified = page.last_modified_at | default: page.date %}
+{% assign article_image = page.header.og_image | default: page.header.overlay_image | default: page.header.image | default: site.og_image %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ article_description | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page.url | absolute_url | jsonify }}
+  },
+  "inLanguage": {{ page.locale | default: site.locale | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ article_modified | date_to_xmlschema | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ site.author.name | jsonify }},
+    "url": {{ site.author.url | default: site.url | jsonify }}
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": {{ site.author.name | jsonify }},
+    "url": {{ site.author.url | default: site.url | jsonify }}
+  }{% if article_image %},
+  "image": {{ article_image | absolute_url | jsonify }}{% endif %}{% if page.categories %},
+  "keywords": {{ page.categories | join: ", " | jsonify }}{% endif %}
+}
+</script>
+{% endif %}
+
 {% if page.collection == "posts" or page.math %}
 <script>
   window.MathJax = {

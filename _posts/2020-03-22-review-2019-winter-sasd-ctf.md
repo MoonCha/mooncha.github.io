@@ -1,8 +1,12 @@
 ﻿---
-title: 단기 유학동안 수강한 보안 과목의 CTF 과제 문제 리뷰
+title: TU Graz 보안 수업 CTF 과제 리뷰
+description: "TU Graz의 Security Aspects in Software Development 수업에서 수행한 CTF 문제와 풀이 과정을 리뷰합니다."
 author: MoonCha
 layout: post
 categories: [HACKING]
+header:
+  og_image: /assets/images/obfuscated-turing_completeness.png
+  og_image_alt: 난독화된 CTF turing_completeness 문제 코드
 ---
 
 ## 2019 Winter: SASD

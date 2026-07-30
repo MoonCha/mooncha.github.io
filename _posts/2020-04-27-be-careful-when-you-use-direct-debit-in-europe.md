@@ -1,8 +1,12 @@
 ---
 title: 유럽에서 자동 이체를 사용할 때 주의할 점
+description: "유럽에서 자동 이체가 잔액 부족으로 실패했을 때 발생한 수수료 사례와 주의사항을 공유합니다."
 author: MoonCha
 layout: post
 categories: [MISC]
+header:
+  og_image: /assets/images/educom-bank-charge.png
+  og_image_alt: 자동 이체 실패 후 청구된 은행 수수료 내역
 ---
 
 **선요약**: 자동 이체가 잔액 부족으로 실패하게 하면 많은 수수료가 청구된다. + Educom sucks

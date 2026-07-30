@@ -1,22 +1,33 @@
 title: MoonCha's Notepad
 subtitle: Documentation for Life
 description: >-
-  See how MoonCha lives his life.
+  개발, 프로그래밍, 커리어와 일상에서 배운 내용을 기록하는 MoonCha의 기술 블로그입니다.
 email: moonchang@postech.ac.kr
 
 url: "https://mooncha.github.io"
 baseurl: ""
 repository: MoonCha/mooncha.github.io
+timezone: Asia/Seoul
 
 remote_theme: mmistakes/minimal-mistakes@4.28.0
 minimal_mistakes_skin: default
-locale: en-US
+locale: ko-KR
+
+og_image: /assets/images/working-man-with-tools.png
+og_image_alt: 개발과 커리어에 관한 MoonCha의 기록
+
+social:
+  type: Person
+  name: MoonCha
+  links:
+    - https://github.com/MoonCha
 
 author:
   name: MoonCha
   avatar: https://avatars0.githubusercontent.com/u/14259596
   bio: Documentation for Life
   email: moonchang@postech.ac.kr
+  url: https://mooncha.github.io
   links:
     - label: GitHub
       icon: fab fa-fw fa-github
@@ -35,9 +46,20 @@ plugins:
   - jekyll-sitemap
   - jekyll-include-cache
 
+exclude:
+  - .agents
+  - .obsidian
+  - LICENSE.md
+  - REPOSITORY_GUIDE.md
+  - 무제.md
+
 after_footer_scripts:
   - /assets/js/mermaid.min.js
   - /assets/js/mermaid-init.js
+
+category_archive:
+  type: liquid
+  path: /topics/
 
 defaults:
   - scope:
@@ -45,6 +67,7 @@ defaults:
       type: posts
     values:
       layout: single
+      locale: ko-KR
       author_profile: true
       read_time: true
       share: true

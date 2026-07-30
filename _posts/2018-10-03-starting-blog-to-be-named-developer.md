@@ -1,8 +1,12 @@
 ---
 title: 네임드 개발자 - 블로깅을 시작하며
+description: "개발자로서 배운 내용과 프로젝트 경험을 기록하기 위해 기술 블로그를 시작한 이유와 목표를 소개합니다."
 author: MoonCha
 layout: post
 categories: [MISC]
+header:
+  og_image: /assets/images/wolves.jpg
+  og_image_alt: MoonCha's Notepad를 상징하는 늑대 이미지
 ---
 개발자들의 블로그는 상당히 흥미롭다.
 
@@ -22,4 +26,4 @@ categories: [MISC]
 
 지금은 조금은 다르지 않을까.
 
-<span class="image right"><img src="{{ 'assets/images/wolves.jpg' | relative_url }}" alt="" /></span>
+<span class="image right"><img src="{{ 'assets/images/wolves.jpg' | relative_url }}" alt="MoonCha's Notepad를 상징하는 늑대 이미지" /></span>

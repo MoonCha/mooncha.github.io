@@ -1,8 +1,12 @@
 ---
 title: 어느 날 일하면서 알게된 Promise 동작의 일부
+description: "JavaScript Promise와 async/await를 사용하며 발견한 resolve와 then의 내부 동작을 코드 예제로 정리합니다."
 author: MoonCha
 layout: post
 categories: [JAVASCRIPT, PROGRAMMING]
+header:
+  og_image: /assets/images/getRowListByIdReturnType.png
+  og_image_alt: TypeScript 함수의 Promise 반환 타입을 보여주는 코드 편집기
 ---
 
 나는 보통 새 프로그래밍 언어를 입문할 때 튜토리얼 페이지를 보면서 기초부터 쌓아올리는 방식을 쓰지 않는다. 이미 작성된 코드나 예시 코드만 보고 대충 추측하고, 언어 syntax나 기능 사용에 문제가 부딪치면 그 때서야 찾아보는 편이다.

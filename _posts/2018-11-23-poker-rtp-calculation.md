@@ -1,5 +1,6 @@
 ﻿---
 title: Video Poker RTP 계산기 구현에 대한 기록
+description: "비디오 포커의 RTP를 계산하기 위해 가능한 패와 전략을 분석하고 계산기를 구현한 과정을 정리합니다."
 author: MoonCha
 layout: post
 categories: [MISC, MATH, VIDEO_POKER]

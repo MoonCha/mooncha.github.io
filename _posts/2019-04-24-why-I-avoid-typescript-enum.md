@@ -1,5 +1,6 @@
 ---
-title: 내가 Typescript의 Enum을 쓰지 않는 이유
+title: TypeScript enum을 쓰지 않는 이유
+description: "TypeScript enum 대신 객체와 리터럴 타입을 선택한 이유를 타입 안정성, 런타임 동작과 유지보수 관점에서 설명합니다."
 author: MoonCha
 layout: post
 categories: [JAVASCRIPT, TYPESCRIPT, PROGRAMMING]

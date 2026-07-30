@@ -1,5 +1,6 @@
 ---
 title: 개발자 커리어를 시작할 때 알았으면 좋았을만한 점
+description: "신입 개발자가 커리어 초기에 알아두면 좋은 주거, 업무 습관과 장기적인 성장에 관한 경험 기반 조언을 정리합니다."
 author: MoonCha
 layout: post
 categories: [MISC]
